@@ -32,8 +32,6 @@ def dealer_play(deck: list[dict], dealer: dict) -> bool:
 
 def run_full_game(deck: list[dict], player: dict, dealer: dict) -> None:
     deal_two_each(deck, player, dealer)
-    # print(f"The player hand size are: {calculate_hand_value(player["hand"])}")
-    # print(f"The dealer hand size are: {calculate_hand_value(dealer["hand"])}")
     while calculate_hand_value(player["hand"]) <= 21:
         player_decision = ask_player_action()
         if player_decision == "H":
