@@ -14,8 +14,8 @@ def calculate_hand_value(hand: list[dict]) -> int:
 def deal_two_each(deck: list[dict], player: dict, dealer: dict) -> None:
     player["hand"] = [deck.pop(), deck.pop()]
     dealer["hand"] = [deck.pop(), deck.pop()]
-    print(f"The player's hand: {player["hand"]} total {calculate_hand_value(player["hand"])} points.")
-    print(f"The dealer's hand: {dealer["hand"]} total {calculate_hand_value(dealer["hand"])} points.")
+    print(f"\nThe player's hand: {player["hand"]} total {calculate_hand_value(player["hand"])} points.\n")
+    print(f"The dealer's hand: {dealer["hand"]} total {calculate_hand_value(dealer["hand"])} points.\n")
 
 
 
@@ -23,7 +23,7 @@ def dealer_play(deck: list[dict], dealer: dict) -> bool:
     while calculate_hand_value(dealer["hand"]) < 17:
         dealer["hand"].append(deck.pop())
     if calculate_hand_value(dealer["hand"]) > 21:
-        print("Dealer's lost!")
+        print("Dealer's lost!\n")
         return False
     else:
         return True
@@ -36,10 +36,10 @@ def run_full_game(deck: list[dict], player: dict, dealer: dict) -> None:
         player_decision = ask_player_action()
         if player_decision == "H":
             player["hand"].append(deck.pop())
-            print(f"Your hand size are: {player["hand"]} total {calculate_hand_value(player["hand"])} points.")
+            print(f"Your hand size are: {player["hand"]} total {calculate_hand_value(player["hand"])} points.\n")
             if calculate_hand_value(player["hand"]) > 21:
-                print("You lost, maybe next time...")
-                print(f"Your hand size are: {calculate_hand_value(player["hand"])}")
+                print("You lost, maybe next time...\n")
+                print(f"Your hand size are: {calculate_hand_value(player["hand"])}\n")
                 break
         else:
             dealer_game =  dealer_play(deck, dealer)
@@ -47,28 +47,28 @@ def run_full_game(deck: list[dict], player: dict, dealer: dict) -> None:
                 player_hand = calculate_hand_value(player["hand"])
                 dealer_hand = calculate_hand_value(dealer["hand"])
                 if player_hand > dealer_hand:
-                    print("Playrr won!!")
-                    print(f"Player hand: {player["hand"]}")
-                    print(f"total: {player_hand} points.")
-                    print(f"Dealer hand: {dealer["hand"]}.")
-                    print(f"total: {dealer_hand} points.")
+                    print("Playrr won!!\n")
+                    print(f"Player hand: {player["hand"]}\n")
+                    print(f"total: {player_hand} points.\n")
+                    print(f"Dealer hand: {dealer["hand"]}.\n")
+                    print(f"total: {dealer_hand} points.\n")
                     break
                 elif dealer_hand > player_hand:
-                    print("Dealer won!")
-                    print(f"Player hand: {player["hand"]}.")
-                    print(f"total {player_hand} points.")
-                    print(f"Dealer hand: {dealer["hand"]}.")
-                    print(f"total {dealer_hand} points")
+                    print("Dealer won!\n")
+                    print(f"Player hand: {player["hand"]}.\n")
+                    print(f"total {player_hand} points.\n")
+                    print(f"Dealer hand: {dealer["hand"]}.\n")
+                    print(f"total {dealer_hand} points\n")
                     break
                 else:
-                    print("draw..") 
+                    print("\ndraw..") 
                     break
             else:
-                print("player won!!")
-                print(f"Your hand size are: {player["hand"]}")
-                print(f"total {calculate_hand_value(player["hand"])} points.")
-                print(f"The dealer hand size are: {dealer["hand"]} total {calculate_hand_value(dealer["hand"])} points.")
-                print(f"total {calculate_hand_value(dealer["hand"])} points.")
+                print("\nplayer won!!\n")
+                print(f"Your hand size are: {player["hand"]}\n")
+                print(f"total {calculate_hand_value(player["hand"])} points.\n")
+                print(f"The dealer hand size are: {dealer["hand"]} total {calculate_hand_value(dealer["hand"])} points.\n")
+                print(f"total {calculate_hand_value(dealer["hand"])} points.\n")
                 break
                 
                     

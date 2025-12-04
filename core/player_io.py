@@ -5,6 +5,6 @@ def ask_player_action() -> str:
     elif decision == "S":
         return decision
     else:
-        print("The only options to choose from are H or S.")
+        print("The only options to choose from are H or S.\n")
         return ask_player_action()
     
