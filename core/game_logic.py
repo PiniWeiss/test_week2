@@ -51,7 +51,7 @@ def run_full_game(deck: list[dict], player: dict, dealer: dict) -> None:
                     print(f"Player hand: {player["hand"]}")
                     print(f"total: {player_hand} points.")
                     print(f"Dealer hand: {dealer["hand"]}.")
-                    print("total: {dealer_hand} points.")
+                    print(f"total: {dealer_hand} points.")
                     break
                 elif dealer_hand > player_hand:
                     print("Dealer won!")
